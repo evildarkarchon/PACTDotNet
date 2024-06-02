@@ -1,4 +1,10 @@
-﻿namespace PACTDotNet
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PACTDotNet
 {
     public class Info
     {
@@ -35,7 +41,7 @@
 
         public List<string> LclSkipList { get; set; } = new List<string>();
 
-            // Hard exclude plugins per game here
+        // Hard exclude plugins per game here
         public List<string> Fo3SkipList { get; set; }
         public List<string> FnvSkipList { get; set; }
         public List<string> Fo4SkipList { get; set; }
@@ -78,5 +84,9 @@
             ];
         }
     }
+    public static class Globals
+    {
+        public static Info Instance { get; } = new Info();
+        public static Info Info { get; } = Instance;
+    }
 }
-
